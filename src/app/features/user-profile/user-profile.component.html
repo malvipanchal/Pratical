@@ -1,0 +1,217 @@
+<div class="user-container">
+  <div
+    style="
+      max-width: 900px;
+      border-left: 1px solid darkgray;
+      padding: 0 20px 0px 30px;
+      border-right: 1px solid darkgray;
+      min-width: 900px;
+    "
+  >
+    <ul class="list-unstyled">
+      <span
+        class="badge badge-pill badge-primary"
+        style="background-color: #f48024; font-size: 13px"
+        >Profile</span
+      >
+      <li class="media">
+        <div class="card">
+          <!-- src="../../../assets/user-image.jpg" -->
+          <img
+            class="card-img-top mr-3"
+            [src]="userInfo.profile_image"
+            alt="Generic placeholder image"
+            style="height: 215px; padding: 15px"
+          />
+          <div class="card-body" style="align-self: center; padding: unset">
+            <h5 class="card-title">
+              {{ userInfo.reputation }}
+              <span style="color: #6a737c; font-size: 13px">REPUTATION</span>
+            </h5>
+          </div>
+          <div
+            class="card-body"
+            style="width: 215px; display: flex; justify-content: space-between"
+          >
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              style="
+                border-color: #f1b600;
+                color: black;
+                background-color: #fff4d1;
+              "
+            >
+              <span
+                style="
+                  height: 8px;
+                  width: 8px;
+                  background-color: #f1b600;
+                  border-radius: 50%;
+                  display: inline-block;
+                  margin: 0px 5px 0 0px;
+                "
+              ></span>
+              <a style="font-size: 12px">{{ userInfo?.badge_counts?.gold }}</a>
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              style="
+                border-color: #9a9c9f;
+                color: black;
+                background-color: #e8e8e8;
+              "
+            >
+              <span
+                style="
+                  height: 8px;
+                  width: 8px;
+                  background-color: #9a9c9f;
+                  border-radius: 50%;
+                  display: inline-block;
+                  margin: 0px 5px 0 0px;
+                "
+              ></span>
+              <a style="font-size: 12px">{{
+                userInfo?.badge_counts?.silver
+              }}</a>
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              style="
+                border-color: #ab825f;
+                color: black;
+                background-color: #f2e9e1;
+              "
+            >
+              <span
+                style="
+                  height: 8px;
+                  width: 8px;
+                  background-color: #ab825f;
+                  border-radius: 50%;
+                  display: inline-block;
+                  margin: 0px 5px 0 0px;
+                "
+              ></span>
+              <a style="font-size: 12px">{{
+                userInfo?.badge_counts?.bronze
+              }}</a>
+            </button>
+          </div>
+        </div>
+        <!-- <img
+          class="mr-3"
+          src="../../../assets/user-image.jpg"
+          alt="Generic placeholder image"
+          style="height: 215px"
+        /> -->
+        <div class="media-body" style="padding: 0 0px 0 2em">
+          <h3 class="mt-0 mb-1" style="font-weight: bold">
+            {{ userInfo.display_name }}
+          </h3>
+          <span *ngIf="userInfo?.location"> {{ userInfo.location }}</span>
+          <br />
+          <span *ngIf="userInfo?.website_url"> {{ userInfo.website_url }}</span>
+        </div>
+      </li>
+      <li class="media my-4">
+        <div>
+          <div class="header">
+            <h4>
+              Top Tags
+              <span style="color: #6a737c; font-size: 17px"
+                >({{ topTagList?.length }})</span
+              >
+            </h4>
+          </div>
+          <div>
+            <div *ngFor="let tag of topTagList; let i = index">
+              <span
+                class="badge badge-info"
+                *ngIf="i < 3"
+                style="font-size: 100%; margin: 4px 0"
+                >{{ tag.tag_name }}</span
+              >
+              <span
+                style="color: #6a737c; margin: 0 5px 0 7em; font-size: 12px"
+                *ngIf="i < 3"
+                >SCORE</span
+              >
+              <span style="font-weight: 600; font-size: 12px" *ngIf="i < 3">{{
+                tag.answer_score
+              }}</span>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="media-body" style="padding: 2em 3em; font-size: 12px">
+          <div>
+            <span style="color: #6a737c; margin: 0 5px">SCORE</span>
+            <span style="font-weight: 600">3329</span>
+          </div>
+          <div>
+            <span style="color: #6a737c; margin: 0 5px">POSTS</span>
+            <span style="font-weight: 600">3329</span>
+          </div>
+        </div> -->
+      </li>
+      <li class="media que-container">
+        <div style="max-width: 900px; padding: 0 3em 0px 0; min-width: 900px">
+          <div class="header">
+            <h4>Top Questions</h4>
+          </div>
+          <ul class="list-unstyled">
+            <li class="media" *ngFor="let que of queList">
+              <!-- <img class="mr-3" src="..." alt="Generic placeholder image" /> -->
+
+              <div
+                style="
+                  display: flex;
+                  min-width: 145px;
+                  justify-content: space-between;
+                  margin-right: 20px;
+                  color: #6a737c;
+                "
+              >
+                <div class="summary">
+                  <span>{{ que.score }}</span>
+                  <span>votes</span>
+                </div>
+                <div class="summary">
+                  <span>{{ que.answer_count }}</span>
+                  <span>answers</span>
+                </div>
+                <div class="summary">
+                  <span>{{ que.view_count }}</span>
+                  <span>views</span>
+                </div>
+              </div>
+              <div class="media-body">
+                <h5 class="mt-0 mb-1">
+                  <a
+                    href="#"
+                    class="badge badge-primary"
+                    style="margin: 0 5px 0 0"
+                    >{{ que.bounty_amount }}</a
+                  >{{ que.title }}
+                </h5>
+                <div>
+                  <span class="badge badge-info" *ngFor="let tag of que.tags">{{
+                    tag
+                  }}</span>
+                </div>
+                <div style="display: flex; justify-content: flex-end">
+                  <span style="color: #6a737c">
+                    {{ que?.creation_date * 1000 | date: "d MMM, mm:ss" }}</span
+                  >
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

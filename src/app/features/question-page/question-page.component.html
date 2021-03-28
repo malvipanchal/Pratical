@@ -1,0 +1,67 @@
+<div class="que-container">
+  <div
+    style="
+      max-width: 900px;
+      border-left: 1px solid darkgray;
+      padding: 0 20px 0px 30px;
+      border-right: 1px solid darkgray;
+      min-width: 900px;
+    "
+  >
+    <div class="header">
+      <h4>Top Questions</h4>
+    </div>
+    <ul class="list-unstyled">
+      <li class="media" *ngFor="let que of queList">
+        <!-- <img class="mr-3" src="..." alt="Generic placeholder image" /> -->
+
+        <div
+          style="
+            display: flex;
+            min-width: 145px;
+            justify-content: space-between;
+            margin-right: 20px;
+            color: #6a737c;
+          "
+        >
+          <div class="summary">
+            <span>{{ que.score }}</span>
+            <span>votes</span>
+          </div>
+          <div class="summary">
+            <span>{{ que.answer_count }}</span>
+            <span>answers</span>
+          </div>
+          <div class="summary">
+            <span>{{ que.view_count }}</span>
+            <span>views</span>
+          </div>
+        </div>
+        <div class="media-body">
+          <h5 class="mt-0 mb-1">
+            <a href="#" class="badge badge-primary" style="margin: 0 5px 0 0">{{
+              que.bounty_amount
+            }}</a
+            >{{ que.title }}
+          </h5>
+          <div>
+            <span class="badge badge-info" *ngFor="let tag of que.tags">{{
+              tag
+            }}</span>
+          </div>
+          <div style="display: flex; justify-content: flex-end">
+            <span style="color: #6a737c" *ngIf="que?.creation_date">
+              <!-- {{ getTimeString(que?.creation_date) }} -->
+              {{ que?.creation_date * 1000 | date: "d MMM, mm:ss" }}
+            </span>
+            <span
+              style="color: #07c; padding: 0 10px; cursor: pointer"
+              (click)="userProfile(que.owner?.user_id)"
+              >{{ que.owner?.display_name }}</span
+            >
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

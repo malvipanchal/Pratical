@@ -1,0 +1,57 @@
+<!-- Toolbar -->
+
+<div
+  class="toolbar"
+  role="banner"
+  style="
+    border-top: 3px solid #f48024;
+    /* box-shadow: 0 1px 0 rgba(12, 13, 14, 0.15); */
+    border-bottom: 3px solid #d3d3d37d;
+  "
+>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      max-width: 97.2307692rem !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    "
+  >
+    <img
+      width="40"
+      alt="Angular Logo"
+      src="../assets/logo-stackoverflow.png"
+      style="width: 150px; height: 30px; margin-top: -4px; cursor: pointer"
+      (click)="quePage()"
+    />
+    <span>About</span>
+    <span>Products</span>
+    <span>For Teams</span>
+    <!-- <div class="spacer"></div> -->
+    <div style="padding: 0 20px">
+      <input
+        class="searchbtn"
+        type="text"
+        name="search"
+        placeholder="Search.."
+      />
+    </div>
+    <div class="btn-section">
+      <button
+        type="button"
+        class="btn btn-outline-primary"
+        (click)="loginPage()"
+      >
+        Login
+      </button>
+      <button type="button" class="btn btn-outline-primary">Signup</button>
+    </div>
+  </div>
+</div>
+
+<div class="main-container">
+  <app-spinner></app-spinner>
+  <router-outlet></router-outlet>
+</div>

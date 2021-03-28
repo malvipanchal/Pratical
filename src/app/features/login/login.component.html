@@ -1,0 +1,51 @@
+<div class="login-container">
+  <div class="login-form">
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <form #loginForm="ngForm">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              required
+              name="email"
+              [(ngModel)]="loginObj.email"
+              #email="ngModel"
+              [email]="true"
+              [ngClass]="{
+                'input-error': email.invalid && email.touched && email.dirty
+              }"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              required
+              minlength="6"
+              name="pwd"
+              #pwd="ngModel"
+              [(ngModel)]="loginObj.pwd"
+              [ngClass]="{
+                'input-error': pwd.invalid && pwd.touched && pwd.dirty
+              }"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-block btn-primary"
+            [disabled]="!loginForm.valid"
+            (click)="login()"
+          >
+            Log in
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
