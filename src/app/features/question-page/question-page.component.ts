@@ -15,32 +15,6 @@ export class QuestionPageComponent implements OnInit {
 
   ngOnInit() {
     this.getQueList()
-    // this.queList = [
-    //   {
-    //     title: "Cannot read property 'name' of undefined but i have every functions",
-    //     badges: ["angular", "node", "javascript"],
-    //     reputaion: "+50",
-    //     votes: 7,
-    //     answers: 8,
-    //     views: 177
-    //   },
-    //   {
-    //     title: "“App not installaed” android on emulator or physical device?",
-    //     badges: ["android", "node", "javascript"],
-    //     reputaion: "+50",
-    //     votes: 7,
-    //     answers: 8,
-    //     views: 177
-    //   },
-    //   {
-    //     title: "Question Title 3",
-    //     badges: ["java", "node", "javascript"],
-    //     reputaion: "+50",
-    //     votes: 7,
-    //     answers: 8,
-    //     views: 177
-    //   }
-    // ]
   }
 
   getQueList() {
