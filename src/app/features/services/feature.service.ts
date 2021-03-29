@@ -10,7 +10,6 @@ export class FeatureService {
   constructor(private http: HttpClient) { }
 
   getFeaturedQueList() {
-    // https://api.stackexchange.com/2.2/questions/featured?key=8H2U03a8frDKQ5VsPWWv2A((&site=stackoverflow&order=desc&sort=activity&filter=default
     return this.http.get(`${environment.serverUrl}questions/featured?key=${environment.apiKey}&site=stackoverflow&order=desc&sort=activity&filter=default`)
   }
 

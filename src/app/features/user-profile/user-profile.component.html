@@ -16,7 +16,6 @@
       >
       <li class="media">
         <div class="card">
-          <!-- src="../../../assets/user-image.jpg" -->
           <img
             class="card-img-top mr-3"
             [src]="userInfo.profile_image"
@@ -102,12 +101,6 @@
             </button>
           </div>
         </div>
-        <!-- <img
-          class="mr-3"
-          src="../../../assets/user-image.jpg"
-          alt="Generic placeholder image"
-          style="height: 215px"
-        /> -->
         <div class="media-body" style="padding: 0 0px 0 2em">
           <h3 class="mt-0 mb-1" style="font-weight: bold">
             {{ userInfo.display_name }}
@@ -146,16 +139,6 @@
             </div>
           </div>
         </div>
-        <!-- <div class="media-body" style="padding: 2em 3em; font-size: 12px">
-          <div>
-            <span style="color: #6a737c; margin: 0 5px">SCORE</span>
-            <span style="font-weight: 600">3329</span>
-          </div>
-          <div>
-            <span style="color: #6a737c; margin: 0 5px">POSTS</span>
-            <span style="font-weight: 600">3329</span>
-          </div>
-        </div> -->
       </li>
       <li class="media que-container">
         <div style="max-width: 900px; padding: 0 3em 0px 0; min-width: 900px">
@@ -164,8 +147,6 @@
           </div>
           <ul class="list-unstyled">
             <li class="media" *ngFor="let que of queList">
-              <!-- <img class="mr-3" src="..." alt="Generic placeholder image" /> -->
-
               <div
                 style="
                   display: flex;
